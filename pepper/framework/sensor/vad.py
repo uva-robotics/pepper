@@ -3,7 +3,7 @@ from pepper.framework import AbstractMicrophone
 from webrtcvad import Vad
 import numpy as np
 
-from Queue import Queue
+from queue import Queue
 
 from typing import Iterable
 

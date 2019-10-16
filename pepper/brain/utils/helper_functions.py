@@ -16,9 +16,9 @@ def is_proper_noun(types):
 
 def casefold_text(text, format='triple'):
     if format == 'triple':
-        return text.strip().lower().replace(" ", "-") if isinstance(text, basestring) else text
+        return text.strip().lower().replace(" ", "-") if isinstance(text, str) else text
     elif format == 'natural':
-        return text.strip().lower().replace("-", " ") if isinstance(text, basestring) else text
+        return text.strip().lower().replace("-", " ") if isinstance(text, str) else text
     else:
         return text
 
@@ -75,9 +75,9 @@ def polarity_to_polarity_value(polarity):
 
 def sentiment_to_sentiment_value(sentiment):
     if sentiment is not None:
-        if sentiment > 0:
+        if float(sentiment) > 0:
             return 'POSITIVE'
-        elif sentiment < 0:
+        elif float(sentiment) < 0:
             return 'NEGATIVE'
     return 'UNDERSPECIFIED'
 

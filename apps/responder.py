@@ -21,7 +21,7 @@ RESPONDERS = [
     GreetingResponder(), GoodbyeResponder(), ThanksResponder(), AffirmationResponder(), NegationResponder(),
     WikipediaResponder(),
     WolframResponder(),
-    UnknownResponder(),
+    UnknownResponder()
 ]
 
 

@@ -345,8 +345,8 @@ class StreamedGoogleASR(BaseGoogleASR):
         for i in range(3):
             try:
                 return self._transcribe(audio)
-            except:
-                self._log.error("ASR Transcription Error (try {})".format(i+1))
+            except Exception as e:
+                self._log.error("ASR Transcription Error (try {}) : {}".format(i+1, e))
 
         return []  # Return an empty list if ASR transcription fails
 

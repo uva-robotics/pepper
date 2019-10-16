@@ -4,14 +4,14 @@ import json
 import os
 import sys
 import traceback
-import urllib
-import urllib2
+import urllib.request
+import urllib.parse
 
 from nltk import pos_tag
 from nltk import tree as ntree
 from nltk.stem import WordNetLemmatizer
 
-import wordnet_utils as wu
+from .import wordnet_utils as wu
 from pepper import logger
 
 LOG = logger.getChild(__name__)
@@ -255,9 +255,9 @@ def lexicon_lookup(word, typ=None):
 def dbp_query(q, epr, f='application/json'):
     try:
         params = {'query': q}
-        params = urllib.urlencode(params)
-        opener = urllib2.build_opener(urllib2.HTTPHandler)
-        request = urllib2.Request(epr + '?' + params)
+        params = urllib.parse.urlencode(params)
+        opener = urllib.request.build_opener(urllib.request.HTTPHandler)
+        request = urllib.request.Request(epr + '?' + params)
         request.add_header('Accept', f)
         request.get_method = lambda: 'GET'
         url = opener.open(request)

@@ -459,7 +459,7 @@ class LongTermMemory(BasicBrain):
         attribution = self._rdf_builder.fill_entity(attribution_label, ['Attribution'], 'LTa')
         self._link_entity(attribution, self.perspective_graph)
 
-        for typ, val in perspective_values.iteritems():
+        for typ, val in perspective_values.items():
             attribution_value = self._rdf_builder.fill_entity(val, ['AttributionValue', typ], 'GRASP')
             self._link_entity(attribution_value, self.perspective_graph)
             self.perspective_graph.add((attribution.id, RDF.value, attribution_value.id))

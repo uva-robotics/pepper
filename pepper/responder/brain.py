@@ -31,7 +31,7 @@ class BrainResponder(Responder):
     def respond(self, utterance, app):
         # type: (Utterance, Union[TextToSpeechComponent, BrainComponent]) -> Optional[Tuple[float, Callable]]
 
-        try:
+        # try:
             utterance.analyze()
 
             self._log.debug("TRIPLE: {}".format(utterance.triple))
@@ -51,5 +51,5 @@ class BrainResponder(Responder):
                     # Make sure to not execute the response here, but just to return the response function
                     return 1.0, lambda: app.say(re.sub(r"[\s+_]", " ", reply))
 
-        except Exception as e:
-            self._log.error(e)
+        # except Exception as e:
+        #     self._log.error(e)

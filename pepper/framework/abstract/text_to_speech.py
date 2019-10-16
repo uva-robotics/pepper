@@ -1,6 +1,6 @@
 from pepper.framework.util import Scheduler
 from pepper import logger
-from Queue import Queue
+from queue import Queue
 from time import sleep
 
 from typing import Optional, Union

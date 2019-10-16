@@ -162,7 +162,7 @@ class OpenFace(object):
         is_running: bool
         """
         try:
-            return self.DOCKER_NAME in subprocess.check_output(['docker', 'ps'])
+            return self.DOCKER_NAME in str(subprocess.check_output(['docker', 'ps']))
         except Exception as e:
             return False
 

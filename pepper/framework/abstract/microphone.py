@@ -3,7 +3,7 @@ from pepper import logger
 
 import numpy as np
 
-from Queue import Queue
+from queue import Queue
 from time import time
 
 from collections import deque

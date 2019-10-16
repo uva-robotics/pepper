@@ -3,6 +3,8 @@ import tornado.web
 import tornado.websocket
 import tornado.template
 
+import asyncio
+
 import webbrowser
 
 import os
@@ -39,6 +41,9 @@ class DisplayServer(tornado.web.Application):
     def start(self):
         # type: () -> None
         """Start WebServer"""
+
+        asyncio.set_event_loop(asyncio.new_event_loop())
+
         self.listen(self.PORT)
         webbrowser.open("http://localhost:{}".format(self.PORT))
         tornado.ioloop.IOLoop.instance().start()

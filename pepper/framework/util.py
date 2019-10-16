@@ -1,5 +1,5 @@
 from threading import Thread, Lock
-from Queue import Empty
+from queue import Empty
 from time import sleep
 import json
 import numpy as np

@@ -24,6 +24,8 @@ class GreetingApplication(AbstractApplication,          # All Applications inher
         Called every time a known face is detected.
         """
 
+        print(faces)
+
         for person in faces:
             if self.is_greeting_appropriate(person.name):
                 self.say("Hello, {}!".format(person.name))

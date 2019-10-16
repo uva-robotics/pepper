@@ -61,8 +61,9 @@ class SystemTextToSpeech(AbstractTextToSpeech, GoogleTranslator):
                 response = self._client.synthesize_speech(synthesis_input, self._voice, self._audio_config)
                 self._play_sound(response.audio_content)
                 return
-            except:
+            except Exception as e:
                 self._log.error("Couldn't Synthesize Speech ({})".format(i+1))
+                self._log.error(e)
 
     def _play_sound(self, mp3):
         file_hash = os.path.join(self.TMP, "{}.mp3".format(str(getrandbits(128))))

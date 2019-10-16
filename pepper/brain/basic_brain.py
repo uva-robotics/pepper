@@ -82,7 +82,7 @@ class BasicBrain(object):
         :return: serialized data as string
         """
         # Save to file but return the python representation
-        with open(file_path + '.' + self._connection.format, 'w') as f:
+        with open(file_path + '.' + self._connection.format, 'wb') as f:
             self.dataset.serialize(f, format=self._connection.format)
 
         data = self.dataset.serialize(format=self._connection.format)
@@ -96,6 +96,7 @@ class BasicBrain(object):
         :return: response status
         """
         self._log.info("Uploading ontology to brain")
+
         data = self._serialize(self._brain_log)
 
         return self._connection.upload(data)

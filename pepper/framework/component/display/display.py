@@ -73,6 +73,8 @@ class DisplayComponent(AbstractComponent):
 
             with update_lock:
 
+                print(self._display_info)
+
                 # Serialize Display Info
                 serialized_info = json.dumps(self._display_info)
 

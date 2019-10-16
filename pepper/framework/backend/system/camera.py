@@ -77,7 +77,7 @@ class SystemCamera(AbstractCamera):
                 self.on_image(SystemImage(image, Bounds(-0.55, -0.41+np.pi/2, 0.55, 0.41+np.pi/2)))
         else:
             self._camera.release()
-            raise RuntimeError("{} could not fetch image".format(self.__class__.__name__))
+            self._log.error("{} could not fetch image".format(self.__class__.__name__))
 
         # Maintain frame rate
         sleep(max(0, 1. / self.rate - (time() - t0)))

@@ -3,7 +3,6 @@ The Pepper Responder Package contains logic to determine the correct response to
 """
 
 from .responder import Responder, ResponsePicker, ResponderType
-from unknown import UnknownResponder
 from .conversational import GreetingResponder, GoodbyeResponder, ThanksResponder, AffirmationResponder, \
     NegationResponder
 from .personal import QnAResponder
@@ -11,3 +10,4 @@ from .sensory import VisionResponder, PreviousUtteranceResponder, LocationRespon
 from .internet import WikipediaResponder, WolframResponder
 from .brain import BrainResponder
 from .intention import MeetIntentionResponder
+from .unknown import UnknownResponder
