@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from pepper import config, logger
 
 from google.cloud import speech, translate
-import speech_recognition as sr
 import numpy as np
 
 from typing import List, Tuple, Iterable, Union

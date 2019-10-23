@@ -81,6 +81,7 @@ PEOPLE_FRIENDS_ROOT = os.path.join(PEOPLE_ROOT, 'friends')
 # Root of people Robot has "just met"
 PEOPLE_NEW_ROOT = os.path.join(PEOPLE_ROOT, 'new')
 
+
 # Names of Friends
 PEOPLE_FRIENDS_NAMES = [os.path.splitext(path)[0] for path in os.listdir(PEOPLE_FRIENDS_ROOT)]
 
@@ -124,7 +125,6 @@ BRAIN_URL_REMOTE = "http://145.100.58.167:50053/sparql"
 NAOQI_IP = "192.168.1.12"  # Default WiFi
 NAOQI_PORT = 9559
 NAOQI_URL = "tcp://{}:{}".format(NAOQI_IP, NAOQI_PORT)
-print(NAOQI_URL)
 
 # <<< Application Sensor Parameters >>>
 FACE_RECOGNITION_THRESHOLD = 0.3
