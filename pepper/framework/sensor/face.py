@@ -87,7 +87,8 @@ class OpenFace(object):
         if not self._openface_running():
 
             self._log.debug("{} is not running -> booting it!".format(OpenFace.DOCKER_IMAGE))
-
+            return # Don't run openface yet
+            
             # Start OpenFace image and run server on it
             subprocess.call(['docker', 'run',                                           # Run Docker Image
                              '-d',                                                      # Detached Mode (Non-Blocking)

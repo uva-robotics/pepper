@@ -20,7 +20,7 @@ import os
 APPLICATION_BACKEND = pepper.ApplicationBackend.NAOQI
 
 # Name of Robot
-NAME = "Leolani"
+NAME = "Pepper"
 
 # Name of Unknown and Groups of Humans
 HUMAN_UNKNOWN = "Stranger"
@@ -73,7 +73,7 @@ PACKAGE_ROOT = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.join(*os.path.split(PACKAGE_ROOT)[:-1])
 
 # People Root
-PEOPLE_ROOT = os.path.join(os.path.dirname(__file__), '../people')
+PEOPLE_ROOT = os.path.join(PROJECT_ROOT, 'people')
 
 # Root of Robot's "friends"
 PEOPLE_FRIENDS_ROOT = os.path.join(PEOPLE_ROOT, 'friends')
@@ -86,7 +86,7 @@ PEOPLE_FRIENDS_NAMES = [os.path.splitext(path)[0] for path in os.listdir(PEOPLE_
 
 # Path to GOOGLE_APPLICATION_CREDENTIALS file (.json)
 # See for more details: https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries
-KEY_GOOGLE_CLOUD = os.path.join(os.path.dirname(__file__), "../google_cloud_key.json")
+KEY_GOOGLE_CLOUD = os.path.join(PROJECT_ROOT, "google_cloud_key.json")
 
 if not os.path.exists(KEY_GOOGLE_CLOUD):
     print("WARNING: {} does not exist, \n"
@@ -100,7 +100,7 @@ if not os.path.exists(KEY_GOOGLE_CLOUD):
 # {
 #  "wolfram": "<Your Wolfram Alpha Key>"
 # }
-KEY_WOLFRAM = os.path.join(os.path.dirname(__file__), '../tokens.json')
+KEY_WOLFRAM = os.path.join(PROJECT_ROOT, 'tokens.json')
 
 if not os.path.exists(KEY_WOLFRAM):
     print("WARNING: {} does not exist, \n"
@@ -112,7 +112,7 @@ if not os.path.exists(KEY_WOLFRAM):
 LOG = pepper.LOGGING_FILE
 
 # Brain Logging
-BRAIN_LOG_ROOT = os.path.join(PACKAGE_ROOT, "../backups/brain/brain_log_{}")
+BRAIN_LOG_ROOT = os.path.join(PACKAGE_ROOT, "backups/brain/brain_log_{}")
 
 # <<< Application URLs >>>
 
@@ -121,10 +121,10 @@ BRAIN_URL_LOCAL = "http://localhost:7200/repositories/leolani"
 BRAIN_URL_REMOTE = "http://145.100.58.167:50053/sparql"
 
 # NAOqi Robot URL
-NAOQI_IP = "192.168.1.176"  # Default WiFi
+NAOQI_IP = "192.168.1.12"  # Default WiFi
 NAOQI_PORT = 9559
 NAOQI_URL = "tcp://{}:{}".format(NAOQI_IP, NAOQI_PORT)
-
+print(NAOQI_URL)
 
 # <<< Application Sensor Parameters >>>
 FACE_RECOGNITION_THRESHOLD = 0.3
