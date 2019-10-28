@@ -113,7 +113,7 @@ if not os.path.exists(KEY_WOLFRAM):
 LOG = pepper.LOGGING_FILE
 
 # Brain Logging
-BRAIN_LOG_ROOT = os.path.join(PACKAGE_ROOT, "backups/brain/brain_log_{}")
+BRAIN_LOG_ROOT = os.path.join(PROJECT_ROOT, "backups/brain/brain_log_{}")
 
 # <<< Application URLs >>>
 
